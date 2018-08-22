@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Maven_Project _3_Dev_Tomcat'
+	                build job: 'Vprofile-project-deploy-Dev'
 	            }
 	        }
 	
@@ -24,7 +24,7 @@ pipeline {
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'Maven_Project_4_Prod_Tomcat'
+	                build job: 'Vprofile-project-deploy-Prod'
 	            }
 	            post {
 	                success {
