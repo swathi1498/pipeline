@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Maven_Project _3_Dev_Tomcat'
+	                build job: 'Vprofile-project-deploy-Dev'
 	            }
 	        }
 	    }
