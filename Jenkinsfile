@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Vprofile-project-deploy-Dev'
+	                build job: 'Project_artifact_Dev'
 	            }
 	        }
 	    }
