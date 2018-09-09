@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Vprofile-project-deploy-Dev'
+	                build job: 'Project_artifact_Dev'
 	            }
 	        }
 	
@@ -24,7 +24,7 @@ pipeline {
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'Vprofile-project-deploy-Prod'
+	                build job: 'Project_artifact_Prod'
 	            }
 	            post {
 	                success {
