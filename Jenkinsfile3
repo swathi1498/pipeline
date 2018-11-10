@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Maven_Deploy_Dev'
+	                build job: 'Maven_Deploy_QA'
 	            }
 	        }
 	
