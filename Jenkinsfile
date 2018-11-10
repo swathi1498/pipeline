@@ -25,7 +25,7 @@ pipeline {
 	
 	        stage ('Deployments'){
 	            parallel{
-	                stage ('Deploy to Dev'){
+	                stage ('Deploy to QA'){
 	                    steps {
 	                        sh "scp -p -r /var/lib/jenkins/workspace/Pipeline_As_Code_Job/target/vprofile-v1.war jenkins@${params.tomcat_dev}:/usr/local/apache-tomcat-8.5.34/webapps"
 	                    }
