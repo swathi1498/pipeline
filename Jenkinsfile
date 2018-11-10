@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'Project_artifact_Dev'
+	                build job: 'Maven_Deploy_Dev'
 	            }
 	        }
 	
@@ -24,7 +24,7 @@ pipeline {
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'Project_artifact_Prod'
+	                build job: 'Maven_Deploy_Prod'
 	            }
 	            post {
 	                success {
