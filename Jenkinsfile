@@ -2,8 +2,8 @@ pipeline {
 	    agent any
 	
 	    parameters {
-	         string(name: 'tomcat_dev', defaultValue: '172.31.5.7', description: 'Staging Server')
-	         string(name: 'tomcat_prod', defaultValue: '172.31.2.145', description: 'Production Server')
+	         string(name: 'tomcat_dev', defaultValue: '172.31.22.38', description: 'Staging Server')
+	         string(name: 'tomcat_prod', defaultValue: '172.31.17.33', description: 'Production Server')
 	    }
 	
 	    triggers {
@@ -27,13 +27,13 @@ pipeline {
 	            parallel{
 	                stage ('Deploy to QA'){
 	                    steps {
-	                        sh "scp -p -r /var/lib/jenkins/workspace/Pipeline_As_Code_Job/target/vprofile-v1.war jenkins@${params.tomcat_dev}:/usr/local/apache-tomcat-8.5.34/webapps"
+	                        sh "scp -p -r /var/lib/jenkins/workspace/Jenkins_Pipeline_As_Code/target/vprofile-v1.war jenkins@${params.tomcat_dev}:/usr/local/apache-tomcat-8.5.37/webapps"
 	                    }
 	                }
 	
 	                stage ("Deploy to Production"){
 	                    steps {
-	                        sh "scp -p -r /var/lib/jenkins/workspace/Pipeline_As_Code_Job/target/vprofile-v1.war jenkins@${params.tomcat_prod}:/usr/local/apache-tomcat-8.5.34/webapps"
+	                        sh "scp -p -r /var/lib/jenkins/workspace/Jenkins_Pipeline_As_Code/target/vprofile-v1.war jenkins@${params.tomcat_prod}:/usr/local/apache-tomcat-8.5.37/webapps"
 	                    }
 	                }
 	            }
