@@ -27,13 +27,13 @@ pipeline {
 	            parallel{
 	                stage ('Deploy to QA'){
 	                    steps {
-	                        sh "scp -p -r /var/lib/jenkins/workspace/maven_project_pipeline_as_code/target/vprofile-v1.war jenkins@${params.tomcat_dev}:/usr/local/apache-tomcat-8.5.49/webapps"
+	                        sh "scp -p -r /var/lib/jenkins/workspace/Vpofile-Pipeline/target/vprofile-v1.war devops@${params.tomcat_dev}:/usr/local/apache-tomcat-8.5.50/webapps"
 	                    }
 	                }
 	
 	                stage ("Deploy to Production"){
 	                    steps {
-	                        sh "scp -p -r /var/lib/jenkins/workspace/maven_project_pipeline_as_code/target/vprofile-v1.war jenkins@${params.tomcat_prod}:/usr/local/apache-tomcat-8.5.49/webapps"
+	                        sh "scp -p -r /var/lib/jenkins/workspace/Vpofile-Pipeline/target/vprofile-v1.war devops@${params.tomcat_prod}:/usr/local/apache-tomcat-8.5.50/webapps"
 	                    }
 	                }
 	            }
