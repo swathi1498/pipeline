@@ -4,9 +4,6 @@ pipeline {
         stage('Init'){
             steps {
                 echo "Testing..."
-                emailext body: '''Hi Team
-
-                Thanks''', subject: 'Failure - SonarQube Analysis', to: 'vevadevops@gmail.com'
             }
         }
 
@@ -22,4 +19,10 @@ pipeline {
             }
          }
      }
+    post {
+always {
+emailext body: 'A Test EMail', recipientProviders: [[$class:
+'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+}
+}
 }
