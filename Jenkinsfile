@@ -14,17 +14,17 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'VProfile-Deploy-QA'
+	                build job: 'VProfile-Deploy-Dev job'
 	            }
 	        }
 	
-	        stage ('Deploy to Production'){
+	        stage ('Deploy to UAT'){
 	            steps{
 	                timeout(time:5, unit:'DAYS'){
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'VProfile-Deploy-PROD'
+	                build job: 'Profile-Deploy-UAT job'
 	            }
 	            post {
 	                success {
