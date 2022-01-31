@@ -24,7 +24,7 @@ pipeline {
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'Profile-Deploy-UAT job'
+	                build job: 'VProfile-Deploy-UAT job'
 	            }
 	            post {
 	                success {
