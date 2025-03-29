@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'VProfile-Deploy-Dev job'
+	                build job: 'pipeline-QA'
 	            }
 	        }
 	
@@ -24,7 +24,7 @@ pipeline {
 	                    input message:'Approve PRODUCTION Deployment?'
 	                }
 	
-	                build job: 'VProfile-Deploy-UAT job'
+	                build job: 'pipeline-prod'
 	            }
 	            post {
 	                success {
