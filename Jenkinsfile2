@@ -14,7 +14,7 @@ pipeline {
 	        }
 	        stage ('Deploy to Dev'){
 	            steps {
-	                build job: 'VProfile-Deploy-Dev job'
+	                build job: 'pipeline-QA'
 	            }
 	        }
 	    }
